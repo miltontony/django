@@ -13,8 +13,8 @@
                         {{ field.field }}{{ field.label_tag }}
                     {% else %}
                         {{ field.label_tag }}
-                        {% if field.is_readonly %}
-                            <p>{{ field.contents }}</p>
+                        {% if field.is_readonly or field.field.name == 'owner' or field.field.name == 'user' %}
+                            <p>{{ field.field.value }} </p>
                         {% else %}
                             {{ field.field }}
                         {% endif %}
